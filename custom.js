@@ -48,7 +48,7 @@ let hunters = [
 
 function update() {
     let zennyDisplay = document.getElementById("zennyDisplay");
-    zennyDisplay.innerHTML = zenny;
+    zennyDisplay.innerHTML = Math.floor(zenny);
 }
 
 function attack() {
@@ -66,26 +66,48 @@ function attack() {
 // function to buy an item - click upgrade
 function buyItem(itemName) {
     let upgrade = items.find((item) => item.name == itemName);
-    if(cash >= upgrade.price) {
-        cash -= upgrade.price;
+    if(zenny >= upgrade.price) {
+        zenny -= upgrade.price;
         upgrade.quantity++;
-        upgrade.price *= .02;
+        upgrade.price = Math.floor(upgrade.price * 1.08);
+        console.log(upgrade.price)
+        update();
+        showButtons();
     }
 }
 
 // function to buy a hunter - auto upgrade
 function buyHunter(hunterName) {
     let upgrade = hunters.find((hunter) => hunter.name == hunterName);
-    if(cash >= upgrade.price) {
-        cash -= upgrade.price;
+    if(zenny >= upgrade.price) {
+        zenny -= upgrade.price;
         upgrade.quantity++;
-        upgrade.price *= .02;
+        upgrade.price = Math.floor(upgrade.price * 1.08);
+        update();
+        showButtons();
     }
 }
 
 
 // function to display upgrade buttons
+let itemArea = document.getElementById("itemButtons");
 
+let hunterArea = document.getElementById("hunterButtons");
+
+function showButtons() {
+    let itemTemplate = "";
+    let hunterTemplate = "";
+    items.forEach(
+        (item) => (itemTemplate += `<button id="upgradeButton" onclick="buyItem('${item.name}')">$${item.price} <br/>${item.name}<br/>+${item.multiplier * item.quantity} per click</button>`)
+    )
+    itemArea.innerHTML = itemTemplate;
+    hunters.forEach(
+        (hunter) => (hunterTemplate += `<button id="upgradeButton" onclick="buyHunter('${hunter.name}')">$${hunter.price} <br/>${hunter.name}<br/>+${hunter.multiplier * hunter.quantity} every 3 seconds</button>`)
+    )
+    hunterArea.innerHTML = hunterTemplate;
+}
+
+showButtons();
 
 
 
