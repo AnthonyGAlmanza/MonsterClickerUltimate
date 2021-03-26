@@ -1,0 +1,28 @@
+body {
+    background-position: center center;
+    background-size: cover;
+    background-image: url('background5.png');
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.arena {
+    height: 75vh;
+}
+
+.dragonImg {
+    width: 650px;
+    height: 650px;
+    margin-left: -50px;
+}
+
+.dragonImg:active {
+    transform: translateY(4px);
+}
+
+.warriorImg {
+    width: 180px;
+    height: 180px; 
+    margin-bottom: 40px; 
+    margin-right: 40px;
+}
