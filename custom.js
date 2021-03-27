@@ -6,19 +6,22 @@ let items = [
         name: "boomerang",
         price: 20,
         multiplier: 1,
-        quantity: 0
+        quantity: 0,
+        image: "assets/stylesheets/boomerang.png"
     },
     {
         name: "SmBarrelBomb",
         price: 100,
         multiplier: 5,
-        quantity: 0
+        quantity: 0,
+        image: "assets/stylesheets/SmBarrelBomb.png"
     },
     {
         name: "LgBarrelBomb",
         price: 300,
         multiplier: 15,
-        quantity: 0
+        quantity: 0,
+        image: "assets/stylesheets/LgBarrelBomb.png"
     }
 ]
 
@@ -28,19 +31,22 @@ let hunters = [
         name: "Archer",
         price: 350,
         multiplier: 5,
-        quantity: 0
+        quantity: 0,
+        image: "assets/stylesheets/bow.png"
     },
     {
         name: "Charge Blade",
         price: 450,
         multiplier: 10,
-        quantity: 0
+        quantity: 0,
+        image: "assets/stylesheets/chargeblad.png"
     },
     {
         name: "Gunlance",
         price: 600,
         multiplier: 15,
-        quantity: 0
+        quantity: 0,
+        image: "assets/stylesheets/gunlance.jpg"
     }
 ]
 
@@ -98,11 +104,11 @@ function showButtons() {
     let itemTemplate = "";
     let hunterTemplate = "";
     items.forEach(
-        (item) => (itemTemplate += `<button id="upgradeButton" onclick="buyItem('${item.name}')">$${item.price} <br/>${item.name}<br/>+${item.multiplier * item.quantity} per click</button>`)
+        (item) => (itemTemplate += `<button id="upgradeButton" style="background-image: url(${item.image})" onclick="buyItem('${item.name}')">$${item.price} <br/>${item.name}<br/>+${item.multiplier * item.quantity} per click</button>`)
     )
     itemArea.innerHTML = itemTemplate;
     hunters.forEach(
-        (hunter) => (hunterTemplate += `<button id="upgradeButton" onclick="buyHunter('${hunter.name}')">$${hunter.price} <br/>${hunter.name}<br/>+${hunter.multiplier * hunter.quantity} every 3 seconds</button>`)
+        (hunter) => (hunterTemplate += `<button id="upgradeButton" style="background-image: url(${hunter.image})" onclick="buyHunter('${hunter.name}')">$${hunter.price} <br/>${hunter.name}<br/>+${hunter.multiplier * hunter.quantity} every 3 seconds</button>`)
     )
     hunterArea.innerHTML = hunterTemplate;
 }
