@@ -20,18 +20,33 @@ body {
     transform: translateY(4px);
 }
 
-.warriorImg {
+/* .warriorImg {
+    width: 180px;
+    height: 180px; 
+    margin-bottom: 40px; 
+    margin-right: 40px;
+} */
+
+
+#zenny {
+    color: rgb(154, 236, 241);
+}
+
+#hunterone {
     width: 180px;
     height: 180px; 
     margin-bottom: 40px; 
     margin-right: 40px;
 }
 
-.huntertwo {
+#huntertwo {
     width: 300px;
     height: 275px;
 }
 
-#zenny {
-    color: rgb(154, 236, 241);
+#hunterthree {
+    width: 180px;
+    height: 180px; 
+    margin-bottom: 40px; 
+    margin-right: 40px;
 }
