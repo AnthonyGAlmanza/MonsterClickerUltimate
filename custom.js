@@ -21,7 +21,7 @@ let items = [
         price: 300,
         multiplier: 15,
         quantity: 0,
-        image: "assets/stylesheets/LgBarrelBomb.png"
+        image: "assets/stylesheets/LgBarrelBomb.jpg"
     }
 ]
 
@@ -39,7 +39,7 @@ let hunters = [
         price: 450,
         multiplier: 10,
         quantity: 0,
-        image: "assets/stylesheets/chargeblad.png"
+        image: "assets/stylesheets/chargeblade.png"
     },
     {
         name: "Gunlance",
@@ -104,11 +104,11 @@ function showButtons() {
     let itemTemplate = "";
     let hunterTemplate = "";
     items.forEach(
-        (item) => (itemTemplate += `<button id="upgradeButton" style="background-image: url(${item.image})" onclick="buyItem('${item.name}')">$${item.price} <br/>${item.name}<br/>+${item.multiplier * item.quantity} per click</button>`)
+        (item) => (itemTemplate += `<button id="upgradeButton" onclick="buyItem('${item.name}')">$${item.price}<br/><img class="buttonImg" src="${item.image}"><br/>${item.name}<br/>+${item.multiplier * item.quantity} per click</button>`)
     )
     itemArea.innerHTML = itemTemplate;
     hunters.forEach(
-        (hunter) => (hunterTemplate += `<button id="upgradeButton" style="background-image: url(${hunter.image})" onclick="buyHunter('${hunter.name}')">$${hunter.price} <br/>${hunter.name}<br/>+${hunter.multiplier * hunter.quantity} every 3 seconds</button>`)
+        (hunter) => (hunterTemplate += `<button id="upgradeButton" onclick="buyHunter('${hunter.name}')">$${hunter.price}<br/><img class="buttonImg" src="${hunter.image}"><br/>${hunter.name}<br/>+${hunter.multiplier * hunter.quantity} every 3 seconds</button>`)
     )
     hunterArea.innerHTML = hunterTemplate;
 }

@@ -33,20 +33,37 @@ body {
 }
 
 #hunterone {
+    width: 190px;
+    height: 185px; 
+    margin-bottom: 40px; 
+    margin-right: 40px;
+}
+
+#huntertwo {
+    width: 400px;
+    height: 310px;
+}
+
+#hunterthree {
     width: 220px;
     height: 180px; 
     margin-bottom: 40px; 
     margin-right: 40px;
 }
 
-#huntertwo {
-    width: 340px;
-    height: 310px;
+#hunterfour {
+    width: 240px;
+    height: 205px;
 }
 
-#hunterthree {
-    width: 180px;
-    height: 180px; 
-    margin-bottom: 40px; 
-    margin-right: 40px;
+#upgradeButton {
+    margin: 5px;
+    background-color: rgb(131, 218, 210);
+    border: 3px solid rgb(30, 102, 143);
+    box-shadow: 3px 3px black, -3px 3px black;
+}
+
+.buttonImg {
+    height: 50px;
+    width: 50px;
 }
