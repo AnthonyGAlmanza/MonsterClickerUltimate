@@ -32,26 +32,26 @@ body {
     color: rgb(154, 236, 241);
 }
 
-#hunterone {
+#Archer {
     width: 190px;
     height: 185px; 
     margin-bottom: 40px; 
     margin-right: 40px;
 }
 
-#huntertwo {
+#Gunlance {
     width: 400px;
     height: 310px;
 }
 
-#hunterthree {
+#Longsword {
     width: 220px;
     height: 180px; 
     margin-bottom: 40px; 
     margin-right: 40px;
 }
 
-#hunterfour {
+#ChargeBlade {
     width: 240px;
     height: 205px;
 }

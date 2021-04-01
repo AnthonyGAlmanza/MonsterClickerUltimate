@@ -3,7 +3,7 @@ let zenny = 0;
 // Array of click updgrade objects with attributes
 let items = [
     {
-        name: "boomerang",
+        name: "Boomerang",
         price: 20,
         multiplier: 1,
         quantity: 0,
@@ -35,7 +35,7 @@ let hunters = [
         image: "assets/stylesheets/bow.png"
     },
     {
-        name: "Charge Blade",
+        name: "ChargeBlade",
         price: 450,
         multiplier: 10,
         quantity: 0,
@@ -58,7 +58,7 @@ function update() {
 }
 
 function attack() {
-    zenny++
+    zenny += 50
     for(let i = 0; i < items.length; i++) {
         if(items[i].quantity > 0) {
             zenny += items[i].quantity * items[i].multiplier;
@@ -100,14 +100,20 @@ function buyItem(itemName) {
 // function to buy a hunter - auto upgrade
 function buyHunter(hunterName) {
     let upgrade = hunters.find((hunter) => hunter.name == hunterName);
+    let hunterImg = document.getElementById(hunterName)
+    console.log(hunterImg);
     if(zenny >= upgrade.price) {
         zenny -= upgrade.price;
         upgrade.quantity++;
+        if(hunterImg.style.display == "none"){
+            hunterImg.style.display = "block";
+        }
         upgrade.price = Math.floor(upgrade.price * 1.08);
         update();
         showButtons();
     }
 }
+
 
 
 // function to display upgrade buttons
