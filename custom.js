@@ -67,6 +67,21 @@ function attack() {
     update();
 }
 
+function autoAttack() {
+    for(let i = 0; i < hunters.length; i++) {
+        if(hunters[i].quantity > 0) {
+            zenny += hunters[i].quantity * hunters[i].multiplier;
+        }
+    }
+    update();
+}
+
+function startAutoAttack() {
+    setInterval(autoAttack, 3000);
+}
+
+startAutoAttack();
+
 
 
 // function to buy an item - click upgrade
