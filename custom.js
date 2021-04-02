@@ -50,6 +50,15 @@ let hunters = [
     }
 ]
 
+let charm = {
+    name: "Powercharm",
+    price: 1000000,
+    multiplier: zenny *= 2,
+    quantity: 0,
+    maxQuantity: 1,
+    image: "assets/stylesheets/powercharm.png"
+}
+
 
 
 function update() {
@@ -58,7 +67,7 @@ function update() {
 }
 
 function attack() {
-    zenny += 50
+    zenny += 1
     for(let i = 0; i < items.length; i++) {
         if(items[i].quantity > 0) {
             zenny += items[i].quantity * items[i].multiplier;
@@ -114,6 +123,16 @@ function buyHunter(hunterName) {
     }
 }
 
+// function to buy powercharm - permanent upgrade
+function buyCharm() {
+    if(charm.quantity < charm.maxQuantity) {
+        if(zenny >= charm.price) {
+        zenny -= charm.price;
+        charm.quantity++;
+        }
+    }
+}
+
 
 
 // function to display upgrade buttons
@@ -124,6 +143,7 @@ let hunterArea = document.getElementById("hunterButtons");
 function showButtons() {
     let itemTemplate = "";
     let hunterTemplate = "";
+    let charmTemplate = "";
     items.forEach(
         (item) => (itemTemplate += `<button id="upgradeButton" onclick="buyItem('${item.name}')">$${item.price}<br/><img class="buttonImg" src="${item.image}"><br/>${item.name}<br/>+${item.multiplier * item.quantity} per click</button>`)
     )
@@ -132,6 +152,7 @@ function showButtons() {
         (hunter) => (hunterTemplate += `<button id="upgradeButton" onclick="buyHunter('${hunter.name}')">$${hunter.price}<br/><img class="buttonImg" src="${hunter.image}"><br/>${hunter.name}<br/>+${hunter.multiplier * hunter.quantity} every 3 seconds</button>`)
     )
     hunterArea.innerHTML = hunterTemplate;
+
 }
 
 showButtons();
