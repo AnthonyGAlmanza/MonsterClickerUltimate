@@ -6,6 +6,10 @@ body {
     height: 100vh;
 }
 
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 .arena {
     height: 75vh;
 }
