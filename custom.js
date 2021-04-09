@@ -71,6 +71,7 @@ function attack() {
     for(let i = 0; i < items.length; i++) {
         if(items[i].quantity > 0) {
             zenny += items[i].quantity * items[i].multiplier;
+            }
         }
     }
     update();
